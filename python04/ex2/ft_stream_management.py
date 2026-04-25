@@ -6,19 +6,26 @@ def system_header() -> None:
 
 
 def stream_management() -> None:
-    system_header()
+    try:
+        system_header()
 
-    arch_id = input("Input Stream active. Enter archivist ID: ")
-    status = input("Input Stream active. Enter status report: ")
+        arch_id = input("Input Stream active. Enter archivist ID: ")
+        status = input("Input Stream active. Enter status report: ")
 
-    sys.stdout.write(f"\n[STANDARD] Archive status from {arch_id}: {status}\n")
+        sys.stdout.write("\n[STANDARD] Archive status"
+                         f" from {arch_id}: {status}\n")
 
-    sys.stderr.write("[ALERT] System diagnostic: "
-                     "Communication channels verified\n")
+        sys.stderr.write("[ALERT] System diagnostic: "
+                         "Communication channels verified\n")
 
-    sys.stdout.write("[STANDARD] Data transmission complete\n")
-    print("\nThree-channel communication test successful.")
+        sys.stdout.write("[STANDARD] Data transmission complete\n")
+        print("\nThree-channel communication test successful.")
+    except KeyboardInterrupt:
+        print("\nThe keyboard was interrupted !!")
 
 
 if __name__ == "__main__":
-    stream_management()
+    try:
+        stream_management()
+    except Exception as e:
+        print("Unexcpected error : ", e)

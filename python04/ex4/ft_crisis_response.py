@@ -42,4 +42,7 @@ def crisis_response() -> None:
 
 
 if __name__ == "__main__":
-    crisis_response()
+    try:
+        crisis_response()
+    except Exception as e:
+        print("Unexcpected error : ", e)

@@ -38,4 +38,7 @@ def archive_creation() -> None:
 
 
 if __name__ == "__main__":
-    archive_creation()
+    try:
+        archive_creation()
+    except Exception as e:
+        print("Unexcpected error : ", e)

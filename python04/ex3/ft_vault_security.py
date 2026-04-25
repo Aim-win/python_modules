@@ -30,9 +30,15 @@ def vault_security() -> None:
     except FileNotFoundError:
         print("Error: File not found!!")
 
+    except PermissionError:
+        print("Error :you don't have permissions")
+
     except Exception:
         print("Error while extracting files")
 
 
 if __name__ == "__main__":
-    vault_security()
+    try:
+        vault_security()
+    except Exception as e:
+        print("Unexcpected error : ", e)
