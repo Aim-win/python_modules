@@ -1,0 +1,23 @@
+[project]
+name = "pyproject-toml"
+version = "0.1.0"
+description = "A data analysis program for analyzing Matrix"
+authors = [
+    {name = "momahdam"}
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "pandas==2.1.0",
+    "numpy<2.0.0",
+    "matplotlib==3.7.2",
+    "requests==2.31.0"
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
